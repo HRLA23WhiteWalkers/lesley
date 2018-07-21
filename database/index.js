@@ -1,20 +1,13 @@
-var mysql = require('mysql');
+const mysql = require('mysql');
+const Sequelize = require('sequelize');
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'FILL_ME_IN',
-  database : 'test'
-});
+const connection = new Sequelize('mvp', 'root', '', {
+  host: 'localhost',
+  dialect: 'mysql'
+})
 
-var selectAll = function(callback) {
-  connection.query('SELECT * FROM items', function(err, results, fields) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, results);
-    }
-  });
-};
+connection.authenticate()
+  .then( () => console.log('****** mysql is up and running ^.~ ******'))
+  .catch(err => console.error(err))
 
-module.exports.selectAll = selectAll;
+module.exports = connection;

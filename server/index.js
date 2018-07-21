@@ -1,21 +1,18 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-// var db = require('../database');
+const express = require ('express');
+const path = require('path');
+const parser = require('body-parser');
+const helmet = require('helmet');
+const connection = require('../database/');
+const router = require('./router');
 
-var app = express();
+const server = express();
+const port = 3000;
 
-app.use(express.static(__dirname + '/../client/dist'));
+server.use(helmet());
+server.use(parser.json());
+server.use(parser.urlencoded({extended: true}));
+server.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
-});
+server.use('/', router);
 
-app.listen(3000, function() {
-  console.log('listening on port 3000!');
-});
+server.listen(port, () => console.log('Connected on port ' + port + ' ^____^b'));
