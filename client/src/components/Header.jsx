@@ -17,13 +17,15 @@ class Header extends React.Component {
   }
   
   render() {
+    var {galleryClicked} = this.state;
     return (
-      <div>
-        {this.state.galleryClicked===true ? <Gallery /> : null}
+      <div className={styles.container}>
+        {galleryClicked===true ? <Gallery /> : null}
         <img onClick={() => this.handleClick()} 
           className={styles.cover} 
           src="https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg" 
         />
+        <button className={styles.btn}>View Photos</button>
       </div>
     )
   }

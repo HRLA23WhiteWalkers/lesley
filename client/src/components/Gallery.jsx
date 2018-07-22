@@ -5,6 +5,7 @@
 // Show hide state
 
 import React from 'react';
+import styles from '../stylesheets/Gallery.css';
 
 class Gallery extends React.Component {
   constructor () {
@@ -17,6 +18,12 @@ class Gallery extends React.Component {
     return (
       <div>
         Hello from Gallery.jsx!
+        {/* <div className={styles.modal}>
+          <div className={styles.modal-content}>
+            <span className={styles.close}>&times;</span>
+            <p>Some text in the Modal..</p>
+          </div>
+        </div> */}
       </div>
     )
   }
