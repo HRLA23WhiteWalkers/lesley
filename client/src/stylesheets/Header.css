@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-:local(.container .btn) {
+:local(.container .pbtn) {
   position: relative;
   margin-left: 65px;
   bottom: 25px;
@@ -48,6 +48,40 @@
   cursor: pointer;
 }
 
+:local(.container .sbtn) {
+  float: right;
+  position: relative;
+  margin-right: 20px;
+  bottom: 330px;
+  /* transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); */
+  background:rgba(255,255,255);
+  color:#484848;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+:local(.container .shareicon) {
+    height: auto; 
+    width: auto; 
+    max-width: 15px; 
+    max-height: 15px;
+    position: relative;
+    top: 1px;
+}
+
+:local(.container .saveicon) {
+  height: auto; 
+  width: auto; 
+  max-width: 15px; 
+  max-height: 15px;
+  position: relative;
+  top: 3px;
+}
+
+/* 
 :local(.container ul) {
   width: 149px;
-}
+} */

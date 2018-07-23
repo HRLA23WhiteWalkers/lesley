@@ -25,7 +25,9 @@ class Header extends React.Component {
           className={styles.cover} 
           src="https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg" 
         />
-        <button className={styles.btn}>View Photos</button>
+        <button className={styles.pbtn}>View Photos</button>
+        <button className={styles.sbtn}><img className={styles.saveicon} src="https://s3-us-west-1.amazonaws.com/hackreactorlp/save.png" /> Save</button>
+        <button className={styles.sbtn}><img className={styles.shareicon} src="https://s3-us-west-1.amazonaws.com/hackreactorlp/share.png" /> Share</button>
       </div>
     )
   }
