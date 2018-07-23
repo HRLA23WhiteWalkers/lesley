@@ -3,17 +3,22 @@ import Gallery from './Gallery.jsx';
 import styles from '../stylesheets/Header.css'
 
 class Header extends React.Component {
-  constructor () {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      galleryClicked: false
+      galleryClicked: false,
     }
+    this.onCloseRequest = this.onCloseRequest.bind(this)
   }
 
   handleClick() {
     this.setState({
       galleryClicked: true
     })
+  }
+
+  onCloseRequest() {
+  
   }
   
   render() {

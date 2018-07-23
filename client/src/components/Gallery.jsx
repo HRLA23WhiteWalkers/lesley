@@ -8,8 +8,8 @@ import React from 'react';
 import styles from '../stylesheets/Gallery.css';
 
 class Gallery extends React.Component {
-  constructor () {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
     }
   }
