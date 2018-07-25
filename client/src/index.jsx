@@ -2,4 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header.jsx';
 
-ReactDOM.render(<Header />, document.getElementById('app'));
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state ={}
+  }
+
+  render () {
+    return (
+      <div>
+        <Header />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
