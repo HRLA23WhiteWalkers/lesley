@@ -55,3 +55,22 @@
   position: relative;
   top: 2px;
 }
+
+:local(.Modal) {
+  position: absolute;
+  margin-top: 90px;
+  width: 75%;
+  background-color: white;
+  margin-left: -37%;
+  left: 50%;
+  overflow:hidden;
+}
+
+:local(.Overlay) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+}

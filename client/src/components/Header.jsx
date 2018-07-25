@@ -33,7 +33,8 @@ class Header extends React.Component {
         <button className={styles.sbtn}><img className={styles.shareicon} src="https://s3-us-west-1.amazonaws.com/hackreactorlp/share.png" /> Share</button>
         <ReactModal 
            isOpen={this.state.showModal}
-           className={styles.gallery}
+           className={styles.Modal}
+           overlayClassName={styles.Overlay}
         >
           <Gallery handleCloseModal={this.handleCloseModal} />
           <button onClick={this.handleCloseModal}>Close Modal</button>

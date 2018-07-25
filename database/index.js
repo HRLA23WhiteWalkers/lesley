@@ -1,13 +1,13 @@
-const mysql = require('mysql');
+const pg = require('pg');
 const Sequelize = require('sequelize');
 
-const connection = new Sequelize('mvp', 'root', '', {
+const connection = new Sequelize('fec', 'postgres', '', {
   host: 'localhost',
-  dialect: 'mysql'
+  dialect: 'postgres'
 })
 
 connection.authenticate()
-  .then( () => console.log('****** mysql is up and running ^.~ ******'))
+  .then( () => console.log('****** postgresql is up and running ^.~ ******'))
   .catch(err => console.error(err))
 
 module.exports = connection;

@@ -17,8 +17,9 @@ class Gallery extends React.Component {
   render() {
     return (
       <div>
-        HIIII
-        <button onClick={this.props.handleCloseModal}>Close Modal</button>
+        <img className={styles.img}
+          src="https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg" 
+        />
       </div>
     )
   }
