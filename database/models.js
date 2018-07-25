@@ -7,7 +7,7 @@ var photos = connection.define('photo', {
 })
 
 connection.sync({force: false})
-  .then(() => console.log('***** Synced to MySQL database *****'))
-  .catch(err => console.log('****** Error syncing to MySQL database *****'))
+  .then(() => console.log('***** Synced to PostgreSQL database *****'))
+  .catch(err => console.log('****** Error syncing to PostgreSQL database *****'))
 
 module.exports = {photos}
