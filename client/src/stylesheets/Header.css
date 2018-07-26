@@ -59,9 +59,9 @@
 :local(.Modal) {
   position: absolute;
   margin-top: 90px;
-  width: 75%;
+  width: 64%;
   background-color: white;
-  margin-left: -37%;
+  margin-left: -32%;
   left: 50%;
   overflow: hidden;
 }
