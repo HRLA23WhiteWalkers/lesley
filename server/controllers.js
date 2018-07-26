@@ -3,8 +3,7 @@ const db = require('../database/models');
 const controller = {
   get: (req, res) => {
     var {id} = req.body;
-    db.findAll({
-      where: {listing_id: id}
+    db.photos.findAll({
     })
     .then (photos => {
       if (photos) {
