@@ -2,7 +2,10 @@ const db = require('../database/models');
 
 const controller = {
   get: (req, res) => {
-    db.findAll({})
+    var {id} = req.body;
+    db.findAll({
+      where: {listing_id: id}
+    })
     .then (photos => {
       if (photos) {
         res.status(200).send(photos)

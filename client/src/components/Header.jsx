@@ -36,8 +36,8 @@ class Header extends React.Component {
            className={styles.Modal}
            overlayClassName={styles.Overlay}
         >
-          <Gallery handleCloseModal={this.handleCloseModal} />
-          <button onClick={this.handleCloseModal}>Close Modal</button>
+          <Gallery />
+          <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button>
         </ReactModal>
       </div>
     )
