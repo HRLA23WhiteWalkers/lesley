@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import ScrollLock from 'react-scrolllock';
 import axios from 'axios';
 import Gallery from './Gallery.jsx';
 import styles from '../stylesheets/Header.css'
@@ -14,6 +15,11 @@ class Header extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
+
+  // componentDidMount() {
+  //   this.fetchPhotos();
+  //   console.log(this.state.photos);
+  // }
 
   handleOpenModal() {
     this.setState({ showModal: true });
@@ -50,6 +56,7 @@ class Header extends React.Component {
           <Gallery />
           <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button>
         </ReactModal>
+        {this.state.showModal ? <ScrollLock /> : null}
       </div>
     )
   }
