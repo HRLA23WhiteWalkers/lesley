@@ -6,12 +6,22 @@
 // Will have subcomponent thumbnail gallery
 
 import React from 'react';
+import axios from 'axios';
 import styles from '../stylesheets/Gallery.css';
 
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      currentImage: null
+    }
+  }
+
+  setDefaultImage() {
+    let option = {default: true}
+    axios.get('/rooms/:roomID', option)
+    .then(res => this.setState({currentImage: res.data.url}))
+    .catch(err => console.error(err))
   }
   
   render() {
