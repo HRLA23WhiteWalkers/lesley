@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import axios from 'axios';
 import Gallery from './Gallery.jsx';
 import styles from '../stylesheets/Header.css'
 
@@ -7,19 +8,29 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false 
+      showModal: false,
+      // photos = []
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleOpenModal () {
+  handleOpenModal() {
     this.setState({ showModal: true });
   }
   
-  handleCloseModal () {
+  handleCloseModal() {
     this.setState({ showModal: false });
   }
+
+  // fetchPhotos() {
+  //   let option = {}
+
+  //   axios
+  //     .get('/rooms', option)
+  //     .then(result => this.setState({ photos: result.data}))
+  //     .catch(err => console.error(err))
+  // }
   
   render() {
     return (
