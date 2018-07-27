@@ -59,9 +59,9 @@
 :local(.Modal) {
   position: absolute;
   margin-top: 90px;
-  width: 75%;
+  width: 64%;
   background-color: white;
-  margin-left: -37%;
+  margin-left: -32%;
   left: 50%;
   overflow: hidden;
 }
@@ -72,7 +72,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.85);
 }
 
 :local(.close) {

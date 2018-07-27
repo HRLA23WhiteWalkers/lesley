@@ -13,6 +13,6 @@ server.use(parser.json());
 server.use(parser.urlencoded({extended: true}));
 server.use(express.static(path.join(__dirname, '../client/dist')));
 
-server.use('/', router);
+server.use('/rooms', router);
 
 server.listen(port, () => console.log('Connected on port ' + port + ' ^____^b'));
