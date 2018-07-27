@@ -5,10 +5,11 @@ const controller = require('./controllers');
 //   console.log('Request ID: ', req.params.listing_id);
 //   next();
 // })
-router.route('/')
+router.route('/rooms')
   .get(controller.get)
+  .post(controller.post)
 
 router.route('/rooms/:roomID')
-  .get(controller.getRoom)
+  .get(controller.getPhotosForRoom)
 
 module.exports = router;

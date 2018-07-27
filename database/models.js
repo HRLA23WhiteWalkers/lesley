@@ -7,7 +7,7 @@ var connection = require('./');
 
 var photos = connection.define('photo', {
   url: Sequelize.STRING,
-  default: Sequelize.BOOLEAN,
+  primary: Sequelize.BOOLEAN,
   roomID: Sequelize.INTEGER
 }, {timestamps: false})
 

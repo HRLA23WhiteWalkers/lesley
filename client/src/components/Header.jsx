@@ -48,14 +48,16 @@ class Header extends React.Component {
         <button onClick={this.handleOpenModal} className={styles.pbtn}>View Photos</button>
         <button className={styles.sbtn}><img className={styles.saveicon} src="https://s3-us-west-1.amazonaws.com/hackreactorlp/save.png" /> Save</button>
         <button className={styles.sbtn}><img className={styles.shareicon} src="https://s3-us-west-1.amazonaws.com/hackreactorlp/share.png" /> Share</button>
-        <ReactModal 
-           isOpen={this.state.showModal}
-           className={styles.Modal}
-           overlayClassName={styles.Overlay}
-        >
-          <Gallery />
-          <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button>
-        </ReactModal>
+        <div className={styles.spacer}>
+          <ReactModal 
+            isOpen={this.state.showModal}
+            className={styles.Modal}
+            overlayClassName={styles.Overlay}
+          >
+            <Gallery />
+            <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button>
+          </ReactModal>
+        </div>
         {this.state.showModal ? <ScrollLock /> : null}
       </div>
     )
