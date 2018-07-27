@@ -10,16 +10,16 @@ class Header extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      // photos = []
+      photos: []
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.fetchPhotos();
-  //   console.log(this.state.photos);
-  // }
+  componentDidMount() {
+    this.fetchPhotos();
+    console.log(this.state.photos);
+  }
 
   handleOpenModal() {
     this.setState({ showModal: true });
@@ -29,14 +29,14 @@ class Header extends React.Component {
     this.setState({ showModal: false });
   }
 
-  // fetchPhotos() {
-  //   let option = {}
+  fetchPhotos() {
+    let option = {}
 
-  //   axios
-  //     .get('/rooms', option)
-  //     .then(result => this.setState({ photos: result.data}))
-  //     .catch(err => console.error(err))
-  // }
+    axios
+      .get('/rooms/:roomID', option)
+      .then(result => this.setState({ photos: result.data}))
+      .catch(err => console.error(err))
+  }
   
   render() {
     return (
