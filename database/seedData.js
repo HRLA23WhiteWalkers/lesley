@@ -9,9 +9,9 @@ const { photos } = require('./models.js');
 
 const photoData = [
   {
-    url: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/01.jpg',
+    url: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg',
     roomID: 1,
-    primary: false
+    primary: true
   },
   {
     url: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/02.jpg',
@@ -54,9 +54,9 @@ const photoData = [
     primary: false
   },
   {
-    url: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg',
+    url: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/01.jpg',
     roomID: 1,
-    primary: true
+    primary: false
   },
   {
     url: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/11.jpg',
@@ -111,37 +111,37 @@ const photoData = [
   {
     url: 'https://loremflickr.com/640/480/real,estate,photography/all',
     roomID: 3,
-    primary: false
-  },
-  {
-    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
-    roomID: 3,
-    primary: false
-  },
-  {
-    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
-    roomID: 3,
-    primary: false
-  },
-  {
-    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
-    roomID: 3,
-    primary: false
-  },
-  {
-    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
-    roomID: 3,
-    primary: false
-  },
-  {
-    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
-    roomID: 3,
-    primary: false
-  },
-  {
-    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
-    roomID: 3,
     primary: true
+  },
+  {
+    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
+    roomID: 3,
+    primary: false
+  },
+  {
+    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
+    roomID: 3,
+    primary: false
+  },
+  {
+    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
+    roomID: 3,
+    primary: false
+  },
+  {
+    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
+    roomID: 3,
+    primary: false
+  },
+  {
+    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
+    roomID: 3,
+    primary: false
+  },
+  {
+    url: 'https://loremflickr.com/640/480/real,estate,photography/all',
+    roomID: 3,
+    primary: false
   },
 
 ];

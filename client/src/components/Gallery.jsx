@@ -13,23 +13,24 @@ class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImage: null
+      // photos: [],
+      // currentImage: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg',
+      // currentImage: 'photos[0].url
     }
   }
 
-  setDefaultImage() {
-    let option = {default: true}
-    axios.get('/rooms/:roomID', option)
-    .then(res => this.setState({currentImage: res.data.url}))
-    .catch(err => console.error(err))
+  componentDidMount() {
+    this.setDefaultImage();
   }
   
   render() {
     return (
       <div>
         <img className={styles.img}
-          src="https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg" 
+          src={this.props.currentImage}
         />
+        <button className={styles.close} onClick={this.props.closeModal}>Close Modal</button>
+
       </div>
     )
   }

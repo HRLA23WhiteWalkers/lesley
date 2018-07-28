@@ -10,7 +10,9 @@ class Header extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      photos: []
+      photos: [],
+      // currentImage: this.state.photos[0].url
+      currentImage: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg',
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -29,14 +31,14 @@ class Header extends React.Component {
     this.setState({ showModal: false });
   }
 
-  fetchPhotos() {
-    let option = {}
+  // fetchPhotos() {
+  //   let option = {}
 
-    axios
-      .get('/rooms/:roomID', option)
-      .then(result => this.setState({ photos: result.data}))
-      .catch(err => console.error(err))
-  }
+  //   axios
+  //     .get('/rooms/:roomID', option)
+  //     .then(result => this.setState({ photos: result.data}))
+  //     .catch(err => console.error(err))
+  // }
   
   render() {
     return (
@@ -54,8 +56,13 @@ class Header extends React.Component {
             className={styles.Modal}
             overlayClassName={styles.Overlay}
           >
-            <Gallery />
-            <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button>
+            {/* <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button> */}
+            <Gallery 
+              photos={this.state.photos} 
+              currentImage={this.state.currentImage}
+              closeModal={this.handleCloseModal}
+             />
+             <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button>
           </ReactModal>
         </div>
         {this.state.showModal ? <ScrollLock /> : null}
