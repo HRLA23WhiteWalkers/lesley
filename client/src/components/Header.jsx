@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import Lightbox from 'react-images'
+import Lightbox from 'react-images';
 import ScrollLock from 'react-scrolllock';
 import axios from 'axios';
 import Gallery from './Gallery.jsx';
