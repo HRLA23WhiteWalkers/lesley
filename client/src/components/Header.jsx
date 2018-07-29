@@ -5,14 +5,17 @@ import axios from 'axios';
 import Gallery from './Gallery.jsx';
 import styles from '../stylesheets/Header.css'
 
+ReactModal.setAppElement('#app')
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
       photos: [],
+      showModal: false,
       // currentImage: this.state.photos[0].url
       currentImage: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg',
+      // headerImage: this.state.photos[0].url
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -20,7 +23,20 @@ class Header extends React.Component {
 
   componentDidMount() {
     this.fetchPhotos();
-    console.log(this.state.photos);
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.photos)
+  }
+
+  fetchPhotos() {
+    let option = {}
+    axios
+      .get('/api/rooms/1', option)
+      .then(res => this.setState({
+        photos: res.data
+      }))
+      .catch(err => console.error(err))
   }
 
   handleOpenModal() {
@@ -30,15 +46,6 @@ class Header extends React.Component {
   handleCloseModal() {
     this.setState({ showModal: false });
   }
-
-  // fetchPhotos() {
-  //   let option = {}
-
-  //   axios
-  //     .get('/rooms/:roomID', option)
-  //     .then(result => this.setState({ photos: result.data}))
-  //     .catch(err => console.error(err))
-  // }
   
   render() {
     return (
@@ -56,7 +63,7 @@ class Header extends React.Component {
             className={styles.Modal}
             overlayClassName={styles.Overlay}
           >
-            {/* <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button> */}
+            <button className={styles.close} onClick={this.handleCloseModal}>Close Modal</button>
             <Gallery 
               photos={this.state.photos} 
               currentImage={this.state.currentImage}

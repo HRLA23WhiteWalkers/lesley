@@ -19,9 +19,9 @@ class Gallery extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.setDefaultImage();
-  }
+  // componentDidMount() {
+  //   this.setDefaultImage();
+  // }
   
   render() {
     return (
