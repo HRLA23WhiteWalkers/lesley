@@ -13,30 +13,26 @@ class Header extends React.Component {
     this.state = {
       photos: [],
       showModal: false,
-      // currentImage: this.state.photos[0].url
-      currentImage: 'https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg',
-      // headerImage: this.state.photos[0].url
+      currentImage: '',
+      headerImage: ''
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchPhotos();
-  }
-
-  componentDidUpdate() {
-    console.log(this.state.photos)
-  }
-
-  fetchPhotos() {
-    let option = {}
-    axios
-      .get('/api/rooms/1', option)
-      .then(res => this.setState({
-        photos: res.data
-      }))
-      .catch(err => console.error(err))
+  async componentDidMount() {
+    var axiosInstance = axios.get('/api/rooms/1')
+    try {
+      let res = await axiosInstance
+      this.setState({
+        photos: res.data,
+        headerImage: res.data[0].url,
+        currentImage: res.data[0].url
+      })
+    } catch (err) {
+      console.error(err)
+    }
+    console.log(this.state.headerImage)
   }
 
   handleOpenModal() {
@@ -52,7 +48,7 @@ class Header extends React.Component {
       <div className={styles.container}>
         <img onClick={this.handleOpenModal} 
           className={styles.cover} 
-          src="https://s3-us-west-1.amazonaws.com/hackreactorlp/assets/10.jpg" 
+          src={this.state.headerImage}
         />
         <button onClick={this.handleOpenModal} className={styles.pbtn}>View Photos</button>
         <button className={styles.sbtn}><img className={styles.saveicon} src="https://s3-us-west-1.amazonaws.com/hackreactorlp/save.png" /> Save</button>
