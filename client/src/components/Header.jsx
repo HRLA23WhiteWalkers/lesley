@@ -12,9 +12,9 @@ class Header extends React.Component {
     super(props);
     this.state = {
       photos: [],
-      showModal: false,
       currentImage: '',
-      headerImage: ''
+      headerImage: '',
+      showModal: false
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -32,7 +32,6 @@ class Header extends React.Component {
     } catch (err) {
       console.error(err)
     }
-    console.log(this.state.headerImage)
   }
 
   handleOpenModal() {
