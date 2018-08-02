@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header.jsx';
 
-class App extends React.Component {
+class Photos extends React.Component {
   constructor() {
     super()
     this.state ={}
@@ -17,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Photos />, document.getElementById('photos'));

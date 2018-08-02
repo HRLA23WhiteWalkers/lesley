@@ -7,23 +7,23 @@
     "collectCoverage": true,
     "notify": true,
     "verbose": true,
+    "testURL": "http://localhost/",
     "moduleFileExtensions": [
-      "ts",
-      "tsx",
       "js",
       "jsx",
       "json"
     ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?)$",
     "transform": {
-      "^.+\\.(ts|tsx)?$": "ts-jest"
+      "^.+\\.js$": "babel-jest"
     }
   },
   "scripts": {
     "start": "nodemon ./server/index.js",
     "build": "webpack -w",
     "setup": "node ./database/seedData.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "Lesley Park",
@@ -34,6 +34,7 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "jest": "^23.4.2",
+    "supertest": "^3.1.0",
     "webpack": "^2.7.0"
   },
   "dependencies": {
@@ -45,8 +46,6 @@
     "express": "^4.15.0",
     "helmet": "^3.12.1",
     "jquery": "^3.1.1",
-    "mysql": "^2.16.0",
-    "mysql2": "^1.5.3",
     "nodemon": "^1.18.3",
     "path": "^0.12.7",
     "pg": "^7.4.3",

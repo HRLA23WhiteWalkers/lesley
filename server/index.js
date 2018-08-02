@@ -5,14 +5,14 @@ const helmet = require('helmet');
 const connection = require('../database/');
 const router = require('./router');
 
-const server = express();
+const app = express();
 const port = 3000;
 
-server.use(helmet());
-server.use(parser.json());
-server.use(parser.urlencoded({extended: true}));
-server.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(helmet());
+app.use(parser.json());
+app.use(parser.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
-server.use('/api', router);
+app.use('/api', router);
 
-server.listen(port, () => console.log('Connected on port ' + port + ' ^____^b'));
+app.listen(port, () => console.log('Connected on port ' + port + ' ^____^b'));

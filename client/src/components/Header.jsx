@@ -5,7 +5,7 @@ import axios from 'axios';
 import Gallery from './Gallery.jsx';
 import styles from '../stylesheets/Header.css'
 
-ReactModal.setAppElement('#app')
+ReactModal.setAppElement('#photos')
 
 class Header extends React.Component {
   constructor(props) {
