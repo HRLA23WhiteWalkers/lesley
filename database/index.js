@@ -1,7 +1,7 @@
 const pg = require('pg');
 const Sequelize = require('sequelize');
 
-const connection = new Sequelize('fec', 'postgres', '', {
+const connection = new Sequelize('fec', 'postgres', 'postgres', {
   host: 'localhost',
   dialect: 'postgres'
 })
