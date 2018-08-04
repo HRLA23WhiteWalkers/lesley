@@ -14,5 +14,8 @@ app.use(parser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/api', router);
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+})
 
 app.listen(port, () => console.log('Connected on port ' + port + ' ^____^b'));
